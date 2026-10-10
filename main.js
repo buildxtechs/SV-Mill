@@ -93,72 +93,67 @@ function initCounters() {
     counters.forEach(counter => observer.observe(counter));
 }
 
-// Responsive Navigation Handling
+// Responsive Navigation Handling (Clean Dropdown)
 function initNavigation() {
     const navbar = document.querySelector('.navbar');
     const menuToggle = document.getElementById('menu-toggle');
-    const menuCloseBtn = document.getElementById('menu-close-btn');
-    const navMenuWrapper = document.getElementById('nav-menu-wrapper');
-    const navBackdrop = document.getElementById('nav-backdrop');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinks = document.getElementById('nav-links');
 
-    if (!menuToggle || !navMenuWrapper) return;
-
-    function openNav() {
-        navMenuWrapper.classList.add('is-open');
-        if (navBackdrop) navBackdrop.classList.add('is-active');
-        menuToggle.classList.add('is-active');
-        menuToggle.setAttribute('aria-expanded', 'true');
-        document.body.classList.add('nav-open');
-    }
-
-    function closeNav() {
-        navMenuWrapper.classList.remove('is-open');
-        if (navBackdrop) navBackdrop.classList.remove('is-active');
-        menuToggle.classList.remove('is-active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('nav-open');
-    }
+    if (!menuToggle || !navLinks) return;
 
     function toggleNav() {
-        const isOpen = navMenuWrapper.classList.contains('is-open');
+        const isOpen = navLinks.classList.contains('is-open');
         if (isOpen) {
-            closeNav();
+            navLinks.classList.remove('is-open');
+            menuToggle.classList.remove('is-active');
+            menuToggle.setAttribute('aria-expanded', 'false');
         } else {
-            openNav();
+            navLinks.classList.add('is-open');
+            menuToggle.classList.add('is-active');
+            menuToggle.setAttribute('aria-expanded', 'true');
         }
     }
 
-    menuToggle.addEventListener('click', toggleNav);
-
-    if (menuCloseBtn) {
-        menuCloseBtn.addEventListener('click', closeNav);
-    }
-
-    if (navBackdrop) {
-        navBackdrop.addEventListener('click', closeNav);
-    }
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleNav();
+    });
 
     // Close when navigating via links
-    navLinks.forEach(link => {
+    navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            if (window.innerWidth < 992) {
-                closeNav();
+            if (window.innerWidth < 860) {
+                navLinks.classList.remove('is-open');
+                menuToggle.classList.remove('is-active');
+                menuToggle.setAttribute('aria-expanded', 'false');
             }
         });
     });
 
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (!navbar.contains(e.target) && navLinks.classList.contains('is-open')) {
+            navLinks.classList.remove('is-open');
+            menuToggle.classList.remove('is-active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
     // Close with Escape key
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navMenuWrapper.classList.contains('is-open')) {
-            closeNav();
+        if (e.key === 'Escape' && navLinks.classList.contains('is-open')) {
+            navLinks.classList.remove('is-open');
+            menuToggle.classList.remove('is-active');
+            menuToggle.setAttribute('aria-expanded', 'false');
         }
     });
 
     // Auto-close on resize to desktop view
     window.addEventListener('resize', () => {
-        if (window.innerWidth >= 992 && navMenuWrapper.classList.contains('is-open')) {
-            closeNav();
+        if (window.innerWidth >= 860 && navLinks.classList.contains('is-open')) {
+            navLinks.classList.remove('is-open');
+            menuToggle.classList.remove('is-active');
+            menuToggle.setAttribute('aria-expanded', 'false');
         }
     });
 
@@ -175,6 +170,7 @@ function initNavigation() {
         handleScroll();
     }
 }
+
 
 // Navbar Active State
 function setActiveNav() {

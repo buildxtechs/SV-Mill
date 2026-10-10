@@ -8,18 +8,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="navbar">
-        <a href="index.html" class="logo">
-            <img src="./images/logo.png" alt="SV Enterprises" class="logo-img">
-        </a>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="process.html">Process</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <div class="nav-actions"><a href="contact.html" class="btn btn-secondary">Enquire Now</a></div>
+    <header class="navbar" id="site-navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="SV Enterprises Home">
+                <img src="./images/logo.png" alt="SV Enterprises" class="logo-img">
+            </a>
+
+            <div class="nav-menu-wrapper" id="nav-menu-wrapper">
+                <div class="nav-menu-header">
+                    <div class="nav-drawer-brand">
+                        <img src="./images/logo.png" alt="SV Enterprises" class="drawer-logo-img">
+                        <span class="drawer-brand-title">SV Enterprises</span>
+                    </div>
+                    <button class="menu-close-btn" id="menu-close-btn" aria-label="Close navigation menu">&times;</button>
+                </div>
+                <nav class="nav-links" id="primary-navigation" aria-label="Primary Navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="process.html">Process</a>
+                    <a href="products.html">Products</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <div class="nav-mobile-footer">
+                    <div class="nav-mobile-contact">
+                        <a href="tel:+919876543210" class="mobile-contact-link">
+                            <span>📞</span> +91 98765 43210
+                        </a>
+                        <p class="mobile-contact-loc">📍 Thokkavadi, Tamil Nadu</p>
+                    </div>
+                    <a href="contact.html" class="btn btn-secondary mobile-cta-btn">Enquire Now</a>
+                </div>
+            </div>
+
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-secondary nav-btn-desktop">Enquire Now</a>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu-wrapper">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+        <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
     </header>
 
     <div class="marquee-container">

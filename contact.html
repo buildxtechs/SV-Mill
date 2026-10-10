@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SV Enterprises</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo"><img src="./images/logo.png" alt="SV Enterprises" class="logo-img"></a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a><a href="about.html">About Us</a><a href="process.html">Process</a><a href="products.html">Products</a><a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions"><a href="contact.html" class="btn btn-secondary">Enquire Now</a></div>
+    </header>
+
+    <section class="page-hero">
+        <h1 class="animate-on-scroll">Get In <span>Touch</span></h1>
+        <p class="animate-on-scroll">We are here to assist you with Wholesale Rice Enquiries, Mahal Bookings, and Transport Logistics.</p>
+    </section>
+
+    <section style="background: var(--white);">
+        <div class="contact-container">
+            <div class="animate-on-scroll">
+                <h2 style="margin-bottom: 20px;">Contact Information</h2>
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: var(--secondary-color); font-size: 20px;">📍 SV Enterprises Headquarters</h3>
+                    <p style="font-size: 18px; color: var(--text-muted); margin-top: 10px;">Pudupet road, Chengam, Thokkavadi, Tamil Nadu 606701</p>
+                </div>
+                
+                <div class="grid-2" style="gap: 20px; align-items: start;">
+                    <div>
+                        <h4 style="font-size: 18px; margin-bottom: 10px;">🌾 Mill Enquiries</h4>
+                        <p>Phone: +91 98765 43210</p>
+                        <p>Email: mill@sventerprises.in</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 18px; margin-bottom: 10px;">🏢 Mahal & Transport</h4>
+                        <p>Phone: +91 98765 43211</p>
+                        <p>Email: bookings@sventerprises.in</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; background: #f0f7f1; padding: 20px; border-radius: var(--border-radius); border: 1px dashed var(--primary-color);">
+                    <p style="font-weight: 600; color: var(--primary-color); text-align: center;">[ Google Maps Embedded View Placeholder ]</p>
+                </div>
+            </div>
+
+            <div class="animate-on-scroll" style="background: var(--bg-color); padding: 40px; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                <h2 style="margin-bottom: 20px;">Send an Enquiry</h2>
+                <form onsubmit="event.preventDefault(); alert('Message sent successfully! We will get back to you soon.');">
+                    <label style="font-weight: 600; display: block; margin-bottom: 5px;">Division</label>
+                    <select class="form-control" style="background: var(--white);">
+                        <option>SV Modern Mill (Rice Wholesale)</option>
+                        <option>SV Mahal & Residency</option>
+                        <option>SV Transports (Logistics)</option>
+                        <option>General Enquiry</option>
+                    </select>
+
+                    <input type="text" placeholder="Your Name" class="form-control" required>
+                    <input type="tel" placeholder="Phone Number" class="form-control" required>
+                    <textarea placeholder="How can we help you?" class="form-control" rows="5" required></textarea>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3>SV Enterprises</h3>
+                <p style="color: #bbb; font-size: 14px;">Delivering premium quality and unmatched service across Milling, Hospitality, and Logistics.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About SV</a></li><li><a href="products.html">Our Products</a></li></ul>
+            </div>
+            <div class="footer-links">
+                <h3>Our Divisions</h3>
+                <ul><li>SV Modern Mill</li><li>SV Mahal & Residency</li><li>SV Transports</li></ul>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p style="color: #bbb; font-size: 14px; margin-bottom: 10px;">📍 Pudupet road, Chengam, Thokkavadi, Tamil Nadu 606701</p>
+                <p style="color: #bbb; font-size: 14px;">📞 +91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 SV Enterprises. All rights reserved.</p></div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
